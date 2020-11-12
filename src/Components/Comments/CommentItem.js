@@ -30,7 +30,7 @@ const Text = styled.p`
 `
 
 // Componente de clase
-class Comments extends React.Component {
+class CommentItem extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -63,4 +63,4 @@ class Comments extends React.Component {
     }
 }
 
-export default Comments;
+export default CommentItem;
