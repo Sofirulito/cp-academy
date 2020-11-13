@@ -2,12 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Comment = styled.div`
-    display: inline-block;
-    margin: 10px 10px 10px 0;
+    margin-bottom:20px;
     border-radius: 10px;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 2px #ccc;
     padding: 1rem;
     background: #FFF;
-    width: calc(50% - 10px);
+    min-height: 180px; 
 
     @media (max-width: 768px) {
         width: 100%;
@@ -16,8 +17,8 @@ const Comment = styled.div`
 const Email = styled.p`
     display: inline-block;
     font-size: 1em;
-    padding: .5rem;
-    border-radius: 5px;
+    padding: .2rem .6rem;
+    border-radius: 4px;
     border: 1px solid grey;
     color: palevioletred;
 `
