@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link }  from "react-router-dom";
 import "./header.css";
 
 function Header(){
@@ -6,7 +7,11 @@ function Header(){
       <header className="Header">
         <nav className="Header-nav">
           <a href="/" className="Header-brand">Comments List</a>
-          </nav>
+          <ul className="Header-links">
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/comments">Comments</Link></li>
+          </ul>
+        </nav>
       </header>
     )
 }

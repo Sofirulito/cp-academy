@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Comment = styled.div`
@@ -30,38 +31,20 @@ const Text = styled.p`
     color: #333;
 `
 
-// Componente de clase
-class CommentItem extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            comments: []
-        }
-    }
-
-    componentDidMount() {
-        fetch('https://jsonplaceholder.typicode.com/comments')
-            .then(response => response.json())
-            .then(data => this.setState({ comments: data }));
-    }
-
-    
-    render() {
-        return (
-            <React.Fragment>
-                {this.state.comments == "" ?
-                    <Comment>
-                        <Text>No hay comentarios</Text>
-                    </Comment> : this.state.comments.slice(0, 20).map(item => (
-                        <Comment key={item.id}>
-                            <Email>{item.email}</Email>
-                            <Name>{item.name}</Name>
-                            <Text>{item.body}</Text>
-                        </Comment>
-                    ))}
-            </React.Fragment>
-        )
-    }
+const CommentItem = props => {
+    return (
+        <Comment>
+            <Email>{props.email}</Email>
+            <Name>{props.name}</Name>
+            <Text>{props.body}</Text>
+        </Comment>
+    );
 }
+
+CommentItem.propTypes = {
+    email: PropTypes.string,
+    name: PropTypes.string,
+    text: PropTypes.string
+};
 
 export default CommentItem;

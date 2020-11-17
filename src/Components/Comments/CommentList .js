@@ -3,9 +3,6 @@ import styled from 'styled-components';
 import CommentItem from './CommentItem'
 
 const List = styled.div`
-    margin: 0 auto;
-    padding: 2vw;
-    max-width: 95%;
     column-count: 2;
     column-gap: 20px;
 
@@ -13,13 +10,37 @@ const List = styled.div`
         column-count: 1;
     }
 `
+// Componente de clase
+class CommentList extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            comments: []
+        }
+    }
 
-function CommentList(){
-    return(
-        <List>
-            <CommentItem />
-        </List>
-    )
+    componentDidMount() {
+        fetch('https://jsonplaceholder.typicode.com/comments')
+            .then(response => response.json())
+            .then(data => this.setState({ comments: data }));
+    }
+
+    render(){ 
+        return(
+            <List>
+                <React.Fragment>
+                    {this.state.comments == "" ?
+                        <div>
+                            <p>No hay comentarios</p>
+                        </div> : this.state.comments.slice(0, 40).map(comment =>(
+                            <CommentItem  {...comment} key={comment.id} />
+                        ))
+                    }
+                </React.Fragment>
+            </List>
+        )
+    }
+    
 }
 
 export default CommentList

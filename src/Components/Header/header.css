@@ -21,11 +21,13 @@
 }
 
 .Header-links{
+    display: flex;
     flex-direction: row;
     list-style: none;
 }
 
 .Header a{
     color: #FFF;
+    padding: 0 10px;
     text-decoration: none;
 }
