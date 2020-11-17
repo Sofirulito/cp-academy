@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Header from './Components/Header/Header'
 import CommentList from './Components/Comments/CommentList ';
+import welcome from './images/welcome.jpg';
 
 function App() {
   return (
@@ -26,8 +27,8 @@ function App() {
 
 function Home() {
   return (
-    <div>
-      <h2>Home</h2>
+    <div className="Home">
+      <img src={welcome} alt="welcome" className="Home-img"/>
     </div>
   );
 }
