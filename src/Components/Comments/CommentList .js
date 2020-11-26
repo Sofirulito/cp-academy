@@ -24,7 +24,7 @@ class CommentList extends React.Component {
     componentDidMount() {
         fetch('https://jsonplaceholder.typicode.com/comments')
             .then(response => response.json())
-            .then(data => this.setState({ comments: data.slice(0, 40) }));
+            .then(data => this.setState({ comments: data.slice(0, 20) }));
     }
 
     render(){ 

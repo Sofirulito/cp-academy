@@ -10,6 +10,7 @@ function Header(){
           <ul className="Header-links">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/comments">Comments</Link></li>
+            <li><Link to="/Form">Form Hook</Link></li>
           </ul>
         </nav>
       </header>
