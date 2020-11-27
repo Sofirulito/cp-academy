@@ -1,18 +1,25 @@
-form{
-    margin: 4vw auto;
+.form p{
+    margin: 4vw auto 10px;
     max-width: 40%;
 }
 
-form input{
+.form form{
+    margin: 1vw auto;
+    max-width: 40%;
+    padding: 20px;
+}
+
+.form form input{
     display: block;
     width: 100%;
     padding: 10px;
     margin: 1em 0;
     border: 0;
     border-bottom: 1px solid #333;
+    background-color: transparent;
 }
 
-form input[type='submit']{
+.form form input[type='submit']{
     max-width: 150px;
     background: palevioletred;
     color: #FFF;

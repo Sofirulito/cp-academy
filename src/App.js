@@ -2,11 +2,11 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Header from './Components/Header/Header';
-import Form from './Components/Form';
 import CommentList from './Components/Comments/CommentList ';
 import welcome from './images/welcome.jpg';
 import Comments from './Components/Card/UseCard'
 import Formulario from './Components/Form/Form'
+import Counter from './Components/Hooks/counter'
 
 function App() {
   return (
@@ -15,6 +15,9 @@ function App() {
         <Header/>
         <div className="App-container"> 
           <Switch>
+            <Route path="/Counter">
+              <Counter />
+            </Route>
             <Route path="/Form">
               <Formulario />
             </Route>
@@ -24,7 +27,6 @@ function App() {
             </Route>
             <Route path="/">
               <Home />
-              <Form />
             </Route>
           </Switch>
          </div>
