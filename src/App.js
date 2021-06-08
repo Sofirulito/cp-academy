@@ -1,4 +1,6 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import store from './store';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Header from './Components/Header/Header';
@@ -10,28 +12,30 @@ import Counter from './Components/Hooks/counter'
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Header/>
-        <div className="App-container"> 
-          <Switch>
-            <Route path="/Counter">
-              <Counter />
-            </Route>
-            <Route path="/Form">
-              <Formulario />
-            </Route>
-            <Route path="/comments">
-              <CommentList />
-              <Comments />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
-         </div>
-      </div>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <div className="App">
+          <Header />
+          <div className="App-container">
+            <Switch>
+              <Route path="/Counter">
+                <Counter />
+              </Route>
+              <Route path="/Form">
+                <Formulario />
+              </Route>
+              <Route path="/comments">
+                <CommentList />
+                <Comments />
+              </Route>
+              <Route path="/">
+                <Home />
+              </Route>
+            </Switch>
+          </div>
+        </div>
+      </Router>
+    </Provider>
   );
 }
 
